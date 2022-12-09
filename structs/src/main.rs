@@ -7,14 +7,14 @@ struct User {
 
 struct Color(i32, i32, i32); // tuple struct
 
-#[derive(Debug)]
+#[derive(Debug)] // for printing struct
 struct Rectangle {
     width: u32,
     length: u32,
 }
 
-impl Rectangle { // method
-    fn area(&self) -> u32 {
+impl Rectangle { 
+    fn area(&self) -> u32 { // method
         self.width * self.length
     }
 
@@ -61,7 +61,7 @@ fn main () {
     };
 
     //println!("{}", area(&rect));
-    println!("{}", rect.area());
+    println!("{}", rect.area()); // 1500
     println!("{:#?}", rect);
 
     let rect1 = Rectangle {
@@ -79,8 +79,8 @@ fn main () {
         length: 55,
     };
 
-    println!("{}", rect1.can_hold(&rect2));
-    println!("{}", rect1.can_hold(&rect3));
+    println!("{}", rect1.can_hold(&rect2)); // true
+    println!("{}", rect1.can_hold(&rect3)); // false
 
     let _s = Rectangle::square(20); // calling associated function
 }
